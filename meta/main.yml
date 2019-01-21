@@ -1,7 +1,7 @@
 ---
 galaxy_info:
 
-  role_name: cgroup-mem-limit
+  role_name: cgroups-mem-limit
   author: Pablo Escobar Lopez
   description: Configure a memory cgroup limit for users in a group
 
