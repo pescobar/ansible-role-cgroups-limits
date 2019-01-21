@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/pescobar/ansible-role-cgroups-limits.svg?branch=master)](https://travis-ci.org/pescobar/ansible-role-cgroups-limits)
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-pescobar.cgroups_limits-blue.svg)](https://galaxy.ansible.com/pescobar/cgroups_mem_limit)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-pescobar.cgroups_mem_limit-blue.svg)](https://galaxy.ansible.com/pescobar/cgroups_mem_limit)
 
 ansible-role-cgroups-limits
 =========
