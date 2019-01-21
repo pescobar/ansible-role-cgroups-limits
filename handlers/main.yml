@@ -1,0 +1,11 @@
+---
+
+- name: restart cgconfig
+  service:
+    name: cgconfig
+    state: restarted
+
+- name: restart cgred
+  service:
+    name: cgred
+    state: restarted

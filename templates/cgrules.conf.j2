@@ -1,0 +1,16 @@
+# {{ ansible_managed }}
+
+#The format of this file is described in cgrules.conf(5)
+#manual page.
+#
+# Example:
+#<user>		<controllers>	<destination>
+#@student	cpu,memory	usergroup/student/
+#peter		cpu		test1/
+#%		memory		test2/
+# End of file
+
+# create a cgroup "users-limits" for each member of group {{ cgroup_to_whom_the_limit_applies }}
+# this cgroup rule is limiting memory usage to 10G by user
+# and doing fair-share cpu usage
+{{ cgroup_to_whom_the_limit_applies }} cpu,memory users-limits/%u

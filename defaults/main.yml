@@ -1,0 +1,13 @@
+---
+
+cgroup_memory_limit: '10G'
+
+cgroup_to_whom_the_limit_applies: '@users'
+
+#       user can be:
+#           - a user name
+#           - a group name with @group syntax
+#           - the wildcard '*', for any user or group
+#           - '%', which is equivalent to "ditto" (useful for
+#             multi-line rules where different cgroups need to be
+#             specified for various hierarchies for a single user)

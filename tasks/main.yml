@@ -1,0 +1,34 @@
+---
+
+- name: Install the cgroup packages
+  yum:
+    name:
+      - libcgroup
+      - libcgroup-tools
+    state: present
+
+- name: enable and start cgroup services
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  with_items:
+    - cgred
+    - cgconfig
+  changed_when: false  # workaround so idempotence CI tests work in docker
+
+- name: Copy CGROUPS /etc/cgconfig.conf to limit memory usage
+  template:
+    src: cgconfig.conf.j2
+    dest: /etc/cgconfig.conf
+    owner: root
+    mode: 0644
+  notify: restart cgconfig
+
+- name: Copy CGROUPS /etc/cgrules.conf to limit memory usage
+  template:
+    src: cgrules.conf.j2
+    dest: /etc/cgrules.conf
+    owner: root
+    mode: 0644
+  notify: restart cgred

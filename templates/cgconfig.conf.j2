@@ -1,0 +1,11 @@
+# {{ ansible_managed }}
+
+template users-limits/%u {
+	cpu {
+		cpu.shares = 100;
+	}
+	memory {
+		memory.limit_in_bytes = {{ cgroup_memory_limit }};
+		memory.swappiness = 0;
+	}
+}
